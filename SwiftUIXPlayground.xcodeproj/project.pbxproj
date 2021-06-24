@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED4CC1D326845C8500593A28 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CC1D226845C8500593A28 /* ImagePicker.swift */; };
 		EDB1AECA26799A580022F0CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1AEC926799A580022F0CD /* AppDelegate.swift */; };
 		EDB1AECC26799A580022F0CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1AECB26799A580022F0CD /* SceneDelegate.swift */; };
 		EDB1AECE26799A580022F0CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1AECD26799A580022F0CD /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED4CC1D226845C8500593A28 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		EDB1AEC626799A580022F0CD /* SwiftUIXPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIXPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB1AEC926799A580022F0CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB1AECB26799A580022F0CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				EDB1AEC926799A580022F0CD /* AppDelegate.swift */,
 				EDB1AECB26799A580022F0CD /* SceneDelegate.swift */,
 				EDB1AECD26799A580022F0CD /* ContentView.swift */,
+				ED4CC1D226845C8500593A28 /* ImagePicker.swift */,
 				EDB1AECF26799A5A0022F0CD /* Assets.xcassets */,
 				EDB1AED426799A5A0022F0CD /* LaunchScreen.storyboard */,
 				EDB1AED726799A5A0022F0CD /* Info.plist */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB1AECA26799A580022F0CD /* AppDelegate.swift in Sources */,
+				ED4CC1D326845C8500593A28 /* ImagePicker.swift in Sources */,
 				EDB1AECC26799A580022F0CD /* SceneDelegate.swift in Sources */,
 				EDB1AECE26799A580022F0CD /* ContentView.swift in Sources */,
 			);

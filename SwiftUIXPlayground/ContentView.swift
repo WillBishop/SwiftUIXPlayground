@@ -6,33 +6,33 @@
 //
 
 import SwiftUIX
+import PhotosUI
 
 struct ContentView: View {
 	
 	@State var showPicker = false
-	@State var chosenImage: UIImage? = nil
+	@State var images: [UIImage] = []
 	
 	var body: some View {
-		if let chosenImage = chosenImage {
-			ImageCropper(image: chosenImage)
+		PaginationView(images, id: \.self, axis: .horizontal, transitionStyle: .scroll, showsIndicators: true) { image in
+			ImageCropper(image: image)
 				.frame(width: 300, height: 300)
-				.background(Color.green)
 		}
-		
 		Button(action: {
 			self.showPicker = true
 		}, label: {
 			Text("Show Picker")
 		})
 		.sheet(isPresented: self.$showPicker, content: {
-			ImagePicker(image: self.$chosenImage)
+			ImagePicker(images: self.$images)
+				.edgesIgnoringSafeArea([.bottom])
 		})
 		
-		Button(action: {
-			self.chosenImage = nil
-		}, label: {
-			Text("Clear")
-		})
+//		Button(action: {
+//			self.chosenImage = nil
+//		}, label: {
+//			Text("Clear")
+//		})
 	}
 }
 
@@ -92,7 +92,7 @@ class ImageCropperScrollView: UIScrollView, UIScrollViewDelegate {
 
 		var widthAnchor: NSLayoutConstraint
 		var heightAnchor: NSLayoutConstraint
-		switch image.whatShouldICallThis {
+		switch image.aspect {
 		case .tall:
 			let heightScale = self.frame.height / image.size.width
 			widthAnchor = self.imageView.widthAnchor.constraint(equalTo: self.widthAnchor)
@@ -117,12 +117,6 @@ class ImageCropperScrollView: UIScrollView, UIScrollViewDelegate {
 	}
 	func scrollViewDidZoom(_ scrollView: UIScrollView) {
 		self.setInset(for: scrollView)
-	}
-	
-	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-		let share = UIActivityViewController(activityItems: [self.screenshot()], applicationActivities: nil)
-		
-		UIApplication.shared.firstKeyWindow?.rootViewController?.present(share, animated: true, completion: nil)
 	}
 	
 	func screenshot() -> UIImage {
@@ -156,13 +150,13 @@ class ImageCropperScrollView: UIScrollView, UIScrollViewDelegate {
 
 extension UIImage {
 	
-	enum WhatShouldICallThis {
+	enum ImageAspect {
 		case tall
 		case wide
 		case square
 	}
 	
-	var whatShouldICallThis: WhatShouldICallThis {
+	var aspect: ImageAspect {
 		if self.size.width > self.size.height {
 			return .wide
 		} else if self.size.width < self.size.height {
