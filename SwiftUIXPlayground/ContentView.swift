@@ -119,6 +119,19 @@ class ImageCropperScrollView: UIScrollView, UIScrollViewDelegate {
 		self.setInset(for: scrollView)
 	}
 	
+	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+		let share = UIActivityViewController(activityItems: [self.screenshot()], applicationActivities: nil)
+		
+		UIApplication.shared.firstKeyWindow?.rootViewController?.present(share, animated: true, completion: nil)
+	}
+	
+	func screenshot() -> UIImage {
+		let renderer = UIGraphicsImageRenderer(bounds: bounds)
+		return renderer.image { rendererContext in
+			layer.render(in: rendererContext.cgContext)
+		}
+	}
+	
 	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
 		return imageView
 	}
