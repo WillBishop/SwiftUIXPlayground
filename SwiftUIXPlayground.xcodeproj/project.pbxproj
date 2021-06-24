@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		EDB1AED026799A5A0022F0CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB1AECF26799A5A0022F0CD /* Assets.xcassets */; };
 		EDB1AED326799A5A0022F0CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB1AED226799A5A0022F0CD /* Preview Assets.xcassets */; };
 		EDB1AED626799A5A0022F0CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB1AED426799A5A0022F0CD /* LaunchScreen.storyboard */; };
+		EDB1AEDF26799A740022F0CD /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = EDB1AEDE26799A740022F0CD /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB1AEDF26799A740022F0CD /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = SwiftUIXPlayground;
+			packageProductDependencies = (
+				EDB1AEDE26799A740022F0CD /* SwiftUIX */,
+			);
 			productName = SwiftUIXPlayground;
 			productReference = EDB1AEC626799A580022F0CD /* SwiftUIXPlayground.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +123,9 @@
 				Base,
 			);
 			mainGroup = EDB1AEBD26799A580022F0CD;
+			packageReferences = (
+				EDB1AEDD26799A740022F0CD /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = EDB1AEC726799A580022F0CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDB1AEDD26799A740022F0CD /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDB1AEDE26799A740022F0CD /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB1AEDD26799A740022F0CD /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDB1AEBE26799A580022F0CD /* Project object */;
 }
